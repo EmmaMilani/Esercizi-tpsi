@@ -1,19 +1,32 @@
 #include <stdio.h>
 #include <math.h>
-int main (int argc, char*argv[])
+int main(int argc, char *argv[])
 {
-        double somma =0, radice;
-        int a;
-        do
+   
+    int n, numero, i = 0;
+    double somma = 0;
+    do
+    {
+        printf("Inserisci N maggiore di zero: ");
+        scanf("%d",&n);
+    }while(n<=0);
+
+    do
+    {
+        printf("Inserisci un numero: \n");
+        scanf("%d",&numero);
+        i++;
+        if(numero>=0)
         {
-                printf("Inserisci a: \n");
-                scanf("%d", & a);
-                if(a>=0)
-                {
-                        radice = sqrt(a);
-                        somma = somma + radice;
-                }
-                printf("La somma delle radici è:%f", somma);
-        }while(a>=0);
-        printf("Il numero non permette di effettuare il calcolo");
+            somma = somma + sqrt(numero);
+        }
+        else
+        {
+            printf("Hai inserito un numero negativo.\n");
+         }
+       
+    }while(i < n && numero >= 0);
+    printf("La somma è: %f", somma);
+   
+    return 0;
 }
