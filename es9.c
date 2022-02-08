@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main (int argc, char*argv[])
 {
-    int a, b,c, max, min;
+    int a, b,c, max = 0, min = 20000;
     do
     {
         printf("Inserisci a: \n");
@@ -11,19 +11,18 @@ int main (int argc, char*argv[])
         printf("Inserisci c: \n");
         scanf("%d", & c);
         if(a<b && b<c){
-            if(a> b && a>c){
-                max = a;
+            if(c>max)
+            {
+                max = c;
             } 
-            else{
-                if(a>b && a<c)
-                    max = c;
-                else{
-                    if(a<b && b>c)
-                        max=b;
-                }
+            if(a<min)
+            {
+                min = a
             }
         }
         else
             printf("Terna non valida.\n");
     }while(a>=0 && b>=0 && c>=0);
+    printf("Il minimo è: %d", min);
+    printf("Il massimo è: %d", max);
 }
