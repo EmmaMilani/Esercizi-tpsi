@@ -1,17 +1,16 @@
 #include <stdio.h>
+#define DIM 5
 int main(int argc, char*argv[])
 {
-    int a, b, prodotto, sommaProd=0;
-    do
-    {
-        printf("Inserisci a: \n");
-        scanf("%d", & a);
-        printf("Inserisci b: \n");
-        scanf("%d", & b);
-        prodotto = a*b;
-        printf("Il prodotto è: %d", prodotto);
-        sommaProd = sommaProd + prodotto;
-    }while(a!= 0 || b!=0)
-    printf("La somma è: %d", sommaProd);
+    int numeri[DIM];
+    int i=0;
+    for(i=0; i < DIM; i++){
+        printf("Inserisci un numero:\n");
+        scanf("%d", &numeri[i]);
+    };
+    printf("I numeri al contrario sono:\n");
+    for(i=(DIM -1);i>=0 && i < DIM; i--){
+        printf("%d", numeri[i]);
+    }
     return 0;
 }
